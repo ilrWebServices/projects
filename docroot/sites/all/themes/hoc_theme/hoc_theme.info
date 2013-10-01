@@ -1,0 +1,11 @@
+name = The History of Capitalism
+description = "A theme for The History of Capitalism"
+core = 7.x
+
+stylesheets[all][] = css/style.css
+
+; Information added by drush on 2013-10-01
+version = "unknown"
+project = "hoc_theme"
+datestamp = "1380636167"
+
