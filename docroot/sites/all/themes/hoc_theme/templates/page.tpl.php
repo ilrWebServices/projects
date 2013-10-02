@@ -39,13 +39,14 @@
     </nav> <!-- / nav -->
   <?php endif; ?>
 
+  <div id="banner" class="clearfix">
+    <div class="img"><img src="<?php print base_path() . drupal_get_path('theme', 'hoc_theme') . '/images/home.jpg'; ?>"/></div>
+  </div> <!-- / banner -->
+
+
   <?php print $messages; ?>
 
   <div id="main" class="clearfix" role="main">
-
-    <?php if ($breadcrumb): ?>
-      <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
 
     <div id="content" class="column"><div class="section">
       <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>

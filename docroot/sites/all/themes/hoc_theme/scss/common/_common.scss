@@ -1,13 +1,74 @@
 .container {
   background: $content-area;
   @include box-shadow(0px 0px 20px 0px rgba(0,0,0,0.3));
+  @include border-radius(0 0 10px 10px);
 }
 
 #main {
   clear: both;
-  padding-top: .5em;
+  background: $brand-light;
+  position: relative;
+
+  #content {
+    @include col(8);
+    clear: left;
+    padding-top: 2em;
+    @include mobile-only {
+      @include col(12);
+    }
+  }
+  #sidebar-second {
+    background: $sidebar;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 29%;
+    padding: 1em;
+    height: 100%;
+
+    @include mobile-only {
+      width: 100%;
+      position: relative;
+      clear: left;
+    }
+  }
+}
+
+#banner {
+  @include background-image(linear-gradient(lighten($brand-dark, 10%), $brand-dark));
+  height: 180px;
+  overflow: hidden;
+
+  .img {
+    @include col(9);
+    @include first;
+    
+    @include mobile-only {
+      width: 100%;
+    }
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    float: left;
+    margin-top: -15%;
+    
+    @include tablet-portrait-and-below {
+      margin-top: -5%;
+    }
+
+    .front & {
+      margin-top: 0;
+    }
+  }
+  .front & {
+    height: auto;
+  }
 }
 
 #breadcrumb {
   font-size: .8rem;
+  float: left;
 }

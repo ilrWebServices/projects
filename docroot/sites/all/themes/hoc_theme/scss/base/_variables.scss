@@ -2,27 +2,26 @@
 // Brand
 // ==================================================
 $brand: #B31B1B;
-//$brand-second: #5e9f00;
-//$brand-third: #5e9f00;
+$brand-dark: #303537;
+$brand-light: #efefdc;
+$sidebar: #f6f7e9;
 
 $selection: #212121;
 $highlight: #ffc;
-$bg-body: $brand;
+$bg-body: #e4e4e4;
 $content-area: #fff;
 
 // ==================================================
 // Typography
 // ==================================================
-$font: Arial, sans-serif;
-$font-second: Arial, sans-serif;
+$font: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$font-second: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 $font-third: Arial, sans-serif;
 
-$h1-size: 3em;
-$h2-size: 2.4em;
-$h3-size: 2em;
-$h4-size: 1.8em;
-$h5-size: 1.7em;
-$h6-size: 1.4em;
+$h1-size: 2em;
+$h2-size: 1.8em;
+$h3-size: 1.6em;
+$h4-size: 1.5em;
 
 $h1-text: #212121;
 $h2-text: #212121;
