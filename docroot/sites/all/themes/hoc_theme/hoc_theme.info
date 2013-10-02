@@ -9,3 +9,11 @@ version = "unknown"
 project = "hoc_theme"
 datestamp = "1380636167"
 
+regions[header]         = Header
+regions[banner]         = Banner
+regions[content]        = Content
+regions[content_top]    = Content Top
+regions[content]        = Content
+regions[sidebar_first]  = First Sidebar
+regions[sidebar_second] = Sidebar Second
+regions[footer]         = Footer
