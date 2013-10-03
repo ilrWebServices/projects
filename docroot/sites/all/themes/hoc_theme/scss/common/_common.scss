@@ -66,6 +66,22 @@
   .front & {
     height: auto;
   }
+
+  div.region-banner {
+    padding: 3em 1em;
+    p {
+      color: white;
+      font-style: italic;
+      font-family: $font-second;
+      font-size: 1.2em;
+      font-weight: normal;
+    }
+    h1 {
+      color: white;
+      font-family: $font;
+      font-size: 1.6em;
+    }
+  }
 }
 
 #breadcrumb {
