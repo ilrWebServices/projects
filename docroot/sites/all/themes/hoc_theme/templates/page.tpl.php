@@ -1,3 +1,4 @@
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <div id="page-wrapper" class="container"><div id="page">
 
   <header role="banner">
@@ -35,6 +36,7 @@
   <?php /* TODO: Consider replacing this with a fully expanded suckerfish menu */ ?>
   <?php if ($main_menu): ?>
     <nav role="navigation" class="main">
+      <i class="icon-th-list jpanel-trigger"></i>
       <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Main menu'))); ?>
     </nav> <!-- / nav -->
   <?php endif; ?>
