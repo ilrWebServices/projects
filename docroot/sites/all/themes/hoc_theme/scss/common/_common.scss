@@ -9,6 +9,7 @@
   background: $brand-light;
   position: relative;
   padding-bottom: 2em;
+  @include border-radius(0 0 5px 5px);
 
   #content {
     @include col(8);
@@ -38,6 +39,7 @@
     width: 29%;
     padding: 2em;
     height: 100%;
+    @include border-radius(0 0 5px 0);
 
     @include mobile-only {
       width: 100%;
