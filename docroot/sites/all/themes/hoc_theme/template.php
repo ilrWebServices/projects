@@ -27,6 +27,13 @@ function hoc_theme_js_alter(&$js) {
 }
 
 /**
+ * Implements hook_menu_tree_MENUNAME()
+ */
+function hoc_theme_menu_tree__main_menu($variables){
+  return '<ul class="menu" id="main-menu">' . $variables['tree'] . '</ul>';
+}
+
+/**
  * Implements theme_breadcrumb()
  */
 function hoc_theme_breadcrumb($variables) {
