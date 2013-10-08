@@ -33,11 +33,10 @@
 
   </header> <!-- / header -->
 
-  <?php /* TODO: Consider replacing this with a fully expanded suckerfish menu */ ?>
-  <?php if ($main_menu): ?>
-    <nav role="navigation" class="main">
-      <i class="icon-th-list jpanel-trigger"></i>
-      <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Main menu'))); ?>
+  <?php if ($main_menu_expanded): ?>
+    <nav role="navigation" class="main clearfix">
+      <i class="icon-reorder jpanel-trigger"></i>
+      <?php print render($variables['main_menu_expanded']); ?>
     </nav> <!-- / nav -->
   <?php endif; ?>
 
@@ -50,10 +49,13 @@
     <?php endif; ?>
   </div> <!-- / banner -->
 
-
   <?php print $messages; ?>
 
   <div id="main" class="clearfix" role="main">
+
+    <?php if ($breadcrumb): ?>
+      <div id="breadcrumb" class="column"><?php print $breadcrumb; ?></div>
+    <?php endif; ?>
 
     <div id="content" class="column"><div class="section">
       <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>
@@ -82,15 +84,14 @@
 
   </div> <!-- /#main -->
 
-  <footer role="contentinfo">
-    <div class="section">
-      <?php if ($secondary_menu): ?>
-        <nav role="navigation" class="secondary">
-          <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Secondary menu'))); ?>
-        </nav> <!-- / nav -->
-      <?php endif; ?>
-      <?php print render($page['footer']); ?>
-    </div>  <!-- /.section -->
-  </footer> <!-- / footer -->
-
 </div></div> <!-- /#page, /#page-wrapper -->
+<footer role="contentinfo">
+  <div class="section">
+    <?php if ($secondary_menu): ?>
+      <nav role="navigation" class="secondary">
+        <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Secondary menu'))); ?>
+      </nav> <!-- / nav -->
+    <?php endif; ?>
+    <?php print render($page['footer']); ?>
+  </div>  <!-- /.section -->
+</footer> <!-- / footer -->

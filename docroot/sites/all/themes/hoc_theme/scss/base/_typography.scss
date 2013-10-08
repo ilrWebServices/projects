@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	line-height: 1.2;
 	margin-top: 0;
-	font-family: $font-second;
+	font-family: "OswaldLight";
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -94,6 +94,7 @@ p {
 	line-height: 1.6;
 	color: $p-text;
 	margin-bottom: 20px;
+	font-family: $font;
 
 	img {
 		margin: 0;

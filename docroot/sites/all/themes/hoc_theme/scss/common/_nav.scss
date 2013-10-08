@@ -1,9 +1,12 @@
 nav {
   background: $brand;
   position: relative;
+  width: 105%;
+  margin-left: -2.5%;
 
   .jpanel-trigger {
     display: none;
+    color: white;
 
     @include mobile-only {
       display: inline-block;
@@ -13,35 +16,45 @@ nav {
     }
   }
 
-  #main-menu {
+  ul.menu {
     @include mobile-only {
       display: none;
     }
   }
   
   &.main li {
-    font-size: 1rem;
-    width: percentage(1/5);
+    font-size: .9rem;
+    width: percentage(1/6);
     display: inline-block;
     text-align: center;
     padding: 0;
+    margin: 0;
     display: table;
     float: left;
     height: 50px;
-    line-height: 1em;
+    line-height: 1.2em;
+    border-right: 1px solid darken($brand, 10%);
+    border-left: 1px solid lighten($brand, 5%);
     a {
       @include single-text-shadow(black, 1px, 1px, 1px);
+      font-family: "Oswald";
+      text-transform: uppercase;
       color: white;
       display: table-cell;
       vertical-align: middle;
       padding: 0 10px;
+      font-size: .9em;
       &:hover {
         background: darken($brand, 5%);
         text-decoration: none;
       }
     }
+    ul li { //do suckerfish here
+      display: none;
+    }
     &.active-trail {
       @include background-image(linear-gradient(darken($brand, 15%), darken($brand, 5%) 15%));
+      border-left: 1px solid $brand;
       a:hover {
         background: none;
       }

@@ -7,6 +7,10 @@
  * Adds modernizr.js
  */
 function hoc_theme_preprocess_page(&$variables) {
+  // Menu
+  $menu_item = menu_get_item(); // Get current menu item from path
+  $main_menu_tree = menu_tree_all_data('main-menu', null, 3);
+  $variables['main_menu_expanded'] = menu_tree_output($main_menu_tree);
   // Footer content
   $variables['page']['footer'][] = array('#markup' => '<div class="copyright"><p>&copy; ' . date('Y') . ', Cornell University</p></div>');
 
@@ -20,4 +24,17 @@ function hoc_theme_preprocess_page(&$variables) {
  */
 function hoc_theme_js_alter(&$js) {
   unset($js['misc/tableheader.js']);
+}
+
+/**
+ * Implements theme_breadcrumb()
+ */
+function hoc_theme_breadcrumb($variables) {
+  $breadcrumb = $variables['breadcrumb'];
+  // add current page title, if it exists, or the active title from the menu
+  $breadcrumb[] = (drupal_get_title()) ? drupal_get_title() : menu_get_active_title();
+
+  if (!empty($breadcrumb)) {
+    return '<div class="breadcrumb">' . implode(' » ', $breadcrumb) . '</div>';
+  }
 }
