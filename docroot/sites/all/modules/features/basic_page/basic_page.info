@@ -19,4 +19,5 @@ features[variable][] = menu_parent_basic_page
 features[variable][] = node_options_basic_page
 features[variable][] = node_preview_basic_page
 features[variable][] = node_submitted_basic_page
+features[variable][] = pathauto_node_basic_page_pattern
 features[wysiwyg][] = full_html
