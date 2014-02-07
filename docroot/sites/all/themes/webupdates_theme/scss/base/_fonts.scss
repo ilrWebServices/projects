@@ -1,0 +1,48 @@
+//@include web-font((Oswald), (300, 400, 700));
+//<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+@include font-face(
+  'OswaldBold',
+  font-files(
+    'oswald-bold-webfont.woff', woff,
+    'oswald-bold-webfont.ttf', ttf,
+    'oswald-bold-webfont.svg', svg
+  ),
+  'oswald-bold-webfont.eot'
+);
+@include font-face(
+  'Oswald',
+  font-files(
+    'oswald-regular-webfont.woff', woff,
+    'oswald-regular-webfont.ttf', ttf,
+    'oswald-regular-webfont.svg', svg
+  ),
+  'oswald-regular-webfont.eot'
+);
+@include font-face(
+  'OswaldLight',
+  font-files(
+    'oswald-light-webfont.woff', woff,
+    'oswald-light-webfont.ttf', ttf,
+    'oswald-light-webfont.svg', svg
+  ),
+  'oswald-light-webfont.eot'
+);
+@include font-face(
+  'LatoLight',
+  font-files(
+    'lato-lig-webfont.woff', woff,
+    'lato-lig-webfont.ttf', ttf,
+    'lato-lig-webfont.svg', svg
+  ),
+  'lato-lig-webfont.eot'
+);
+
+@include font-face(
+  'TexGyreHero',
+  font-files(
+    'texgyreheroscn-regular-webfont.woff', woff,
+    'texgyreheroscn-regular-webfont.ttf', ttf,
+    'texgyreheroscn-regular-webfont.svg', svg
+  ),
+  'texgyreheroscn-regular-webfont.eot'
+);

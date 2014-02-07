@@ -1,0 +1,14 @@
+name = IRL Web Services Updates
+description = "A theme for the Web Updates site"
+core = 7.x
+
+stylesheets[all][] = css/style.css
+
+regions[header]         = Header
+regions[banner]         = Banner
+regions[content]        = Content
+regions[content_top]    = Content Top
+regions[content]        = Content
+regions[sidebar_first]  = First Sidebar
+regions[sidebar_second] = Sidebar Second
+regions[footer]         = Footer

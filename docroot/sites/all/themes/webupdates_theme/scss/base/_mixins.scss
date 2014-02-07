@@ -1,0 +1,14 @@
+// ==================================================
+// Mixins
+// ==================================================
+
+@mixin expand-arrow($color) {
+  color: $color;
+  content:'\25BA'; // See http://www.fileformat.info/info/unicode/char/search.htm?q=pointer&preview=entity
+  position: absolute;
+  right: 10px;
+
+  @include tablet-portrait-and-below {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+header {
+  #logo {
+    float: left;
+    margin-right: 2em;
+
+    @include mobile-only {
+      width: 320px;
+    }
+  }
+
+  #name-and-slogan {
+    font-size: 2em;
+    padding-top: 2em;
+  }
+
+  #site-name {
+    display: none;
+  }
+
+  #search-form {
+    @include mobile-only {
+      display: none;
+    }
+  }
+}

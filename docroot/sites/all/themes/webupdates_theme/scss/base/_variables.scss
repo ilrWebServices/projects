@@ -1,0 +1,82 @@
+// ==================================================
+// Brand
+// ==================================================
+$brand: #B31B1B;
+$brand-dark: #303537;
+$brand-light: lighten($brand-dark, 70%);//#efefdc;
+$sidebar: lighten($brand-dark, 75%);
+
+$selection: #212121;
+$highlight: #ffc;
+$bg-body: #4d4e53;
+$content-area: #fff;
+
+// ==================================================
+// Typography
+// ==================================================
+$font: "TexGyreHero", "LatoLight", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "HelveticaNeue", "HelveticaNeueLT", Helvetica, Arial, "Lucida Grande", sans-serif;
+$oswald: "Oswald";
+$serif-fonts: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+$font-third: Arial, sans-serif;
+
+$h1-size: 2em;
+$h2-size: 1.8em;
+$h3-size: 1.6em;
+$h4-size: 1.5em;
+
+$h1-text: $brand;
+$h2-text: $brand;
+$h3-text: $brand;
+$h4-text: $brand;
+$h5-text: #212121;
+$h6-text: #212121;
+
+$h1-link: #212121;
+$h2-link: #212121;
+$h3-link: #212121;
+$h4-link: #212121;
+$h5-link: #212121;
+$h6-link: #212121;
+
+$h1-link-hover: #212121;
+$h2-link-hover: #212121;
+$h3-link-hover: #212121;
+$h4-link-hover: #212121;
+$h5-link-hover: #212121;
+$h6-link-hover: #212121;
+
+$p-text: #3a3939;
+$p-size: 1.2em;
+
+$link: darken($brand, 5%);
+$link-hover: $brand;
+
+$rule: #212121;
+
+$blockquote: #444;
+
+$table-bg: #fff;
+$table-bg-hover: darken($table-bg, 10%);
+$td-text: #444;
+$th-text: #212121;
+
+
+// ==================================================
+// Buttons
+// ==================================================
+$button-bg: #eee;
+$button-bg-focus: #e5e5e5;
+
+
+// ==================================================
+// Forms
+// ==================================================
+$valid: none;
+$invalid: #f0dddd; // red
+
+$input-bg: #fff;
+$input-border: #ccc;
+$input-color: #a4a4a4;
+$label-color: #444;
+
+$input-size: 1.2em;
