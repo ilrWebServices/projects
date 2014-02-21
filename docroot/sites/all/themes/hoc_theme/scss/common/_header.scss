@@ -2,9 +2,14 @@ header {
   #logo {
     float: left;
     margin-right: 2em;
+    max-width: 400px;
+
+    @include tablet-portrait-and-below {
+      width: 325px;
+    }
 
     @include mobile-only {
-      width: 320px;
+      width: 275px;
     }
   }
 
