@@ -33,10 +33,20 @@ function hoc_theme_menu_tree__main_menu($variables){
   return '<ul class="menu" id="main-menu">' . $variables['tree'] . '</ul>';
 }
 
+function hoc_theme_preprocess_html(&$variables) {
+  if ($variables['is_front']) {
+    // kill breadcrumb, set to empty array
+    drupal_set_breadcrumb(array());
+  }
+}
+
 /**
  * Implements theme_breadcrumb()
  */
 function hoc_theme_breadcrumb($variables) {
+  if (drupal_is_front_page()) {
+    return false;
+  }
   $breadcrumb = $variables['breadcrumb'];
   // add current page title, if it exists, or the active title from the menu
   $breadcrumb[] = (drupal_get_title()) ? drupal_get_title() : menu_get_active_title();

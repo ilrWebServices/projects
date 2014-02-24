@@ -41,7 +41,6 @@
   <?php endif; ?>
 
   <div id="banner" class="clearfix">
-    <div class="img"><img src="<?php print base_path() . drupal_get_path('theme', 'hoc_theme') . '/images/home.jpg'; ?>"/></div>
     <?php if ($page['banner']): ?>
       <div id="banner-content">
         <?php print render($page['banner']); ?>
