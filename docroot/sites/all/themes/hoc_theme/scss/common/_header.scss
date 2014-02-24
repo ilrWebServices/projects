@@ -2,7 +2,7 @@ header {
   #logo {
     float: left;
     margin-right: 2em;
-    max-width: 400px;
+    max-width: 402px;
 
     @include tablet-portrait-and-below {
       width: 325px;
