@@ -29,6 +29,18 @@ function google_analytics_universal_menu() {
 }
 
 /**
+ * Implements hook_permission()
+ */
+function google_analytics_universal_permission() {
+  return array(
+    'administer google analytics' => array(
+      'title' => t('Administer Google Analytics'),
+      'description' => t('Set the Google Analytics key for the site.'),
+    ),
+  );
+}
+
+/**
  * Admin form.
  */
 function google_analytics_universal_admin($form, &$form_state) {
