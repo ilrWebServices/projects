@@ -1,7 +1,7 @@
 <?php
 
-// Site projects, environment prod
-$aliases['hoc.prod'] = array(
+// The old prod default site
+$aliases['hoc.prod.default'] = array(
   'parent' => '@parent',
   'site' => 'projects',
   'env' => 'prod',
@@ -12,6 +12,21 @@ $aliases['hoc.prod'] = array(
   'path-aliases' => array (
     '%dump-dir' => '/mnt/files/projectsdev/import',
     '%files' => '/var/www/html/projects.prod/docroot/sites/projects.devcloud.acquia-sites.com/files',
+  ),
+);
+
+// Site projects, environment prod
+$aliases['hoc.prod'] = array(
+  'parent' => '@parent',
+  'site' => 'projects',
+  'env' => 'prod',
+  'uri' => 'http://hoc.ilr.cornell.edu/',
+  'root' => '/var/www/html/projects.prod/docroot',
+  'remote-host' => 'srv-2136.devcloud.hosting.acquia.com',
+  'remote-user' => 'projects',
+  'path-aliases' => array (
+    '%dump-dir' => '/mnt/files/projectsdev/import',
+    '%files' => '/var/www/html/projects.prod/docroot/sites/hoc.ilr.cornell.edu/files',
   ),
 );
 
