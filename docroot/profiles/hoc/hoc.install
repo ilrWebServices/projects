@@ -49,8 +49,6 @@ function hoc_install() {
 }
 
 function hoc_update_7001() {
-  module_enable(array(
-    'google_analytics_universal',
-  );
+  module_enable(array('google_analytics_universal'));
   variable_set('google_analytics_universal_key','UA-4758650-9');
 }
