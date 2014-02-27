@@ -46,9 +46,15 @@ function hoc_install() {
 
   // Add Migrations here as necessary
   hoc_update_7001();
+  hoc_update_7002();
 }
 
 function hoc_update_7001() {
   module_enable(array('google_analytics_universal'));
   variable_set('google_analytics_universal_key','UA-4758650-9');
+}
+
+function hoc_update_7002() {
+  $admin_role = user_role_load_by_name('administrator');
+  user_role_grant_permissions($admin_role->rid, array('administer google analytics'));
 }
