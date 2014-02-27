@@ -1,0 +1,7 @@
+<?php
+/**
+ * Implements hook_uninstall().
+ */
+function google_analytics_universal_uninstall() {
+  variable_del('google_analytics_universal_key');
+}
