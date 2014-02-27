@@ -13,6 +13,37 @@
 define('GOOGLEANALYTICS_PAGES', "admin\nadmin/*\nbatch\nnode/add*\nnode/*/*\nuser/*/*");
 
 /**
+* Implements hook_menu().
+*/
+function google_analytics_universal_menu() {
+  $items = array();
+  $items['admin/config/system/google_analytics'] = array(
+    'title' => t('Google Analytics Settings'),
+    'description' => t('Configure Google Analytics Key'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('google_analytics_universal_admin'),
+    'access arguments' => array('administer google analytics'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Admin form.
+ */
+function google_analytics_universal_admin($form, &$form_state) {
+
+  $form['google_analytics_universal_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Google Analytics Key (UA-XXXXXX-X)'),
+    '#description' => '',
+    '#default_value' => variable_get('google_analytics_universal_key', '')
+  );
+
+  return system_settings_form($form);
+}
+
+/**
  * Implements hook_page_alter()
  * Modified from the official Google Analytics module
  * to suport the Universal GA code
@@ -26,7 +57,9 @@ function google_analytics_universal_page_alter(&$page) {
   // 2. If we want to check the current path as well (e.g. we want to start
   //    tracking logged in users), add the following conditional below
   //    && _googleanalytics_visibility_pages() - ATF
-  if (($user->uid < 1)) {
+
+  $key = variable_get('google_analytics_universal_key');
+  if ($user->uid < 1 && $key) {
     // Track access denied (403) and file not found (404) pages.
     if ($status == '403 Forbidden') {
       // See http://www.google.com/support/analytics/bin/answer.py?answer=86927
@@ -41,7 +74,7 @@ function google_analytics_universal_page_alter(&$page) {
     $script .= "(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),";
     $script .= "m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)";
     $script .= "})(window,document,'script','//www.google-analytics.com/analytics.js','ga');";
-    $script .= "ga('create', 'UA-4758650-9', 'cornell.edu');";
+    $script .= "ga('create', {$key}, 'cornell.edu');";
     $script .= "ga('send', 'pageview');";
 
     drupal_add_js($script, array('scope' => 'header', 'type' => 'inline'));
