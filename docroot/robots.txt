@@ -16,6 +16,9 @@
 # For syntax checking, see:
 # http://www.sxw.org.uk/computing/robots/check.html
 
+# Remove all searching until site goes live
+Disallow: /
+
 User-agent: *
 Crawl-delay: 10
 # Directories
