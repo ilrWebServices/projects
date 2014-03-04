@@ -14,6 +14,16 @@
   #content {
     @include col(8);
 
+    .page-search & {
+      @include col(9);
+      padding: 1em 3em;
+      background: white;
+
+      td.gsc-orderby-container {
+        display: none !important;
+      }
+    }
+
     .no-sidebars & {
       //@include col(12);
     }
