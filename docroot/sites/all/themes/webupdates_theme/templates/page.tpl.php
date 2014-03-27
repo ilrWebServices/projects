@@ -40,21 +40,9 @@
     </nav> <!-- / nav -->
   <?php endif; ?>
 
-  <div id="banner" class="clearfix">
-    <?php if ($page['banner']): ?>
-      <div id="banner-content">
-        <?php print render($page['banner']); ?>
-      </div> <!-- /#banner-content -->
-    <?php endif; ?>
-  </div> <!-- / banner -->
-
   <?php print $messages; ?>
 
   <div id="main" class="clearfix" role="main">
-
-    <?php if ($breadcrumb): ?>
-      <div id="breadcrumb" class="column"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
 
     <div id="content" class="column"><div class="section">
       <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>

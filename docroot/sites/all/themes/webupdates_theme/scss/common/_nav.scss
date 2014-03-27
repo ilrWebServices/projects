@@ -21,7 +21,7 @@ nav {
       display: none;
     }
   }
-  
+
   &.main li {
     font-size: .9rem;
     width: percentage(1/6);
@@ -46,7 +46,7 @@ nav {
       padding: 0 10px;
       font-size: .9em;
       &:hover {
-        background: darken($brand, 5%);
+        background: lighten($brand, 5%);
         text-decoration: none;
       }
     }
@@ -78,7 +78,7 @@ nav {
         }
         ul.menu {
           top: -1px;
-        } 
+        }
 
         & + li a {
           border-top: 0;

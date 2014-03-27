@@ -1,0 +1,14 @@
+article {
+  .field-name-field-tags .field-item {
+    float: left;
+    margin-right: 1em;
+    padding: 0 1em;
+    background: #efefef;
+    @include border-radius(4px);
+  }
+
+  #comments {
+    clear: left;
+    padding-top: 2em;
+  }
+}

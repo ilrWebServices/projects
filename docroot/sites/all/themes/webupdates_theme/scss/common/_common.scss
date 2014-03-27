@@ -1,26 +1,26 @@
-.container {
-  //background: $content-area;
-  //@include box-shadow(0px 0px 20px 0px rgba(0,0,0,0.3));
-  //@include border-radius(0 0 10px 10px);
-}
-
 #main {
   clear: both;
-  background: $brand-light;
   position: relative;
   padding-bottom: 2em;
   @include border-radius(0 0 5px 5px);
 
   #content {
-    @include col(8);
+    @include col(12);
+
+    @include tablet-landscape-and-up {
+      border-right: 1px solid #ccc;
+      padding-right: 2em;
+      @include col(9);
+    }
 
     .no-sidebars & {
       //@include col(12);
     }
     clear: left;
     padding-top: 2em;
-    @include mobile-only {
-      @include col(12);
+
+    article {
+      margin-bottom: 5em;
     }
   }
 
@@ -58,7 +58,7 @@
 
   img {
     width: 100%;
-    
+
     @include tablet-portrait-and-below {
       margin-top: -5%;
     }
