@@ -18,6 +18,17 @@ function webupdates_theme_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter()
+ *
+ */
+function webupdates_theme_form_user_login_alter(&$form, $form_state, $form_id) {
+  $form['netid'] = array(
+    '#markup' => '<h2>Cornell Users</h2><p><a class="button" href="/saml_login">NetID Login</a></p><h2>No Cornell NetID?</h2>',
+    '#weight' => -10,
+  );
+}
+
+/**
  * Implements hook_js_alter().
  *
  * Disables sticky table headers FTW!
