@@ -42,3 +42,16 @@ $aliases['hoc.local'] = array(
     '%files' => 'sites/hoc.projects.dev/files',
   ),
 );
+
+// Local webupdates
+$aliases['webupdates.local'] = array(
+  'parent' => '@parent',
+  'site' => 'projects',
+  'env' => 'local',
+  'uri' => 'http://webupdates.projects.dev',
+  'root' => '/Users/aaron/Vagrant/projects/docroot',
+  'path-aliases' => array(
+    '%dump-dir' => '/tmp',
+    '%files' => 'sites/webupdates.projects.dev/files',
+  ),
+);
