@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * basic_page.features.filter.inc
+ * ilr_wysiwyg.features.filter.inc
  */
 
 /**
  * Implements hook_filter_default_formats().
  */
-function basic_page_filter_default_formats() {
+function ilr_wysiwyg_filter_default_formats() {
   $formats = array();
 
   // Exported format: Full HTML.

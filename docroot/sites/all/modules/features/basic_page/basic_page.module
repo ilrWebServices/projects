@@ -5,19 +5,3 @@
  */
 
 include_once 'basic_page.features.inc';
-
-/**
- * Implements hook_page_alter()
- *
- */
-function basic_page_page_alter(&$page) {
-  $object = menu_get_object();
-  if (($object && $object->type == 'basic_page') && isset($page['content']['system_main']['nodes'])) {
-    $node = current($page['content']['system_main']['nodes']);
-    if (isset($node['field_banner'])) {
-      $page['banner'][] = $node['field_banner'];
-      unset($page['content']['system_main']['nodes'][$node['#node']->nid]['field_banner']);
-    }
-  }
-}
-
