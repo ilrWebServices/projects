@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Sets variables needed for SimpleSAMLphp
+ *
+ * @see system_install()
+ */
+function netid_login_install() {
+  // Set some default values for the simplesamlphp_auth module
+  variable_set('simplesamlphp_auth_activate', 1);
+  variable_set('simplesamlphp_auth_authsource', 'cornell');
+  variable_set('simplesamlphp_auth_forcehttps', 0);
+  variable_set('simplesamlphp_auth_mailattr', 'mail');
+  variable_set('simplesamlphp_auth_registerusers', 1);
+  variable_set('simplesamlphp_auth_unique_id', 'uid');
+  variable_set('simplesamlphp_auth_user_name', 'cn');
+
+  // This setting will allow the automatic assignment of roles for some users
+  // See http://drupal.org/node/1931394 for an explanation of this syntax.
+  $admin_role = user_role_load_by_name('administrator');
+  variable_set('simplesamlphp_auth_rolepopulation', "{$admin_role->rid}:uid,=,atf46|{$admin_role->rid}:uid,=,nr52|{$admin_role->rid}:uid,=,cgh2|{$admin_role->rid}:uid,=,fjp2|{$admin_role->rid}:uid,=,ddd1|{$admin_role->rid}:uid,=,tls245");
+
+  // Install dir is more complicated. It needs to be a full path. We assume
+  // that it is in a directory at the same level as the docroot. We also
+  // determine the $simplesamlphp_installdir based on whether we're
+  // on Acquia or Vagrant
+  $drupal_path = (isset($_SERVER["AH_SITE_GROUP"])) ? DRUPAL_ROOT : '/var/www/projects/docroot';
+  $simplesamlphp_installdir = str_replace(array(
+    '/docroot',
+  ), array(
+    '/simplesamlphp-1.10.0',
+  ), $drupal_path);
+
+  variable_set('simplesamlphp_auth_installdir', $simplesamlphp_installdir);
+
+  // Disable default email notification on user activation
+  // The main reason to do this is that a user created via
+  // netID login will see this message if their account is blocked
+  // and then re-activated.
+  variable_set('user_mail_status_activated_notify', 0);
+}

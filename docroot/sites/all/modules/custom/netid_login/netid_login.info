@@ -1,0 +1,7 @@
+name = Cornell NetID Login
+description = Provides NetID login via SimpleSAMLphp
+core = 7.x
+package = Cornell
+version = 7.x-1.0
+
+dependencies[] = simplesamlphp_auth
