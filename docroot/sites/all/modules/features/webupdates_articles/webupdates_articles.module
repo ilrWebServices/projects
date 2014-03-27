@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Webupdates Articles feature.
+ */
+
+include_once 'webupdates_articles.features.inc';
