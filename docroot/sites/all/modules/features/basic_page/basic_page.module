@@ -5,3 +5,29 @@
  */
 
 include_once 'basic_page.features.inc';
+
+/**
+ * Implements hook_preprocess_hook()
+ *
+ */
+function basic_page_preprocess_node(&$variables) {
+  if (isset($variables['field_banner']) && count($variables['field_banner']) > 0) {
+    $page['banner'][] = array('#markup' => render($variables['content']['field_banner']));
+    //unset($variables['content']['field_banner']);
+  }
+}
+
+/**
+ * Implements hook_page_alter()
+ *
+ */
+function basic_page_page_alter(&$page) {
+  $object = menu_get_object();
+  if (($object && $object->type == 'basic_page') && isset($page['content']['system_main']['nodes'])) {
+    $node = current($page['content']['system_main']['nodes']);
+    if (isset($node['field_banner'])) {
+      $page['banner'][] = $node['field_banner'];
+      unset($page['content']['system_main']['nodes'][$node['#node']->nid]['field_banner']);
+    }
+  }
+}
