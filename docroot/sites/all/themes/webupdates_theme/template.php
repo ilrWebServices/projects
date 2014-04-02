@@ -23,9 +23,17 @@ function webupdates_theme_preprocess_page(&$variables) {
  */
 function webupdates_theme_form_user_login_alter(&$form, $form_state, $form_id) {
   $form['netid'] = array(
-    '#markup' => '<h2>Cornell Users</h2><p><a class="button" href="/saml_login">NetID Login</a></p><h2>No Cornell NetID?</h2>',
+    '#markup' => '<h2>Cornell Users</h2><p><a class="button" href="/saml_login">NetID Login</a></p><h2>Drupal Login</h2>',
     '#weight' => -10,
   );
+}
+
+/**
+ * Implements hook_menu_alter
+ * Removes the password reset functionality
+ */
+function webupdates_theme_menu_alter(&$items) {
+  $items['user/password']['access callback'] = FALSE;
 }
 
 /**
