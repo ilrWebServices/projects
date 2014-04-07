@@ -38,6 +38,40 @@
       position: relative;
       clear: left;
     }
+    p {
+      font-size: 1.2em;
+    }
+    .block {
+      h2 {
+        border-bottom: 1px solid #ccc;
+      }
+      margin-bottom: 3em;
+      tbody, tr {
+        background: none;
+        border: none;
+        margin-bottom: 2em;
+      }
+
+      td {
+        border: none;
+        margin: 0;
+        padding: 0;
+        padding-top: 1em;
+
+        &.title-author {
+          font-size: .8em;
+          .node-author {
+            display: none;
+          }
+          span.marker {
+            display: none;
+          }
+        }
+        &.edit, &.delete {
+          display: none;
+        }
+      }
+    }
   }
 }
 
