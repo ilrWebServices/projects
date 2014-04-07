@@ -5,3 +5,12 @@
  */
 
 include_once 'webupdates_articles.features.inc';
+
+/**
+ * Implements hook_user_login
+ * Fixes issue with url redirects on netid login
+ */
+function webupdates_articles_user_login(&$edit, $account) {
+  $action = $edit['complete form']['#action'];
+  $edit['complete form']['#action'] = urldecode($action);
+}
