@@ -38,5 +38,33 @@ function webupdates_articles_context_default_contexts() {
   $context->condition_mode = 1;
   $export['comment_block_anonymous'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'recent_articles';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '*' => '*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'node-recent' => array(
+          'module' => 'node',
+          'delta' => 'recent',
+          'region' => 'sidebar_first',
+          'weight' => '-11',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['recent_articles'] = $context;
+
   return $export;
 }
