@@ -6,6 +6,9 @@
 function drupal_streamline_dev_enable() {
   // Redirect all outgoing mail to the local filesystem
   variable_set('mail_system', array('default-system' => 'DevelMailLog'));
+
+  $simplesamlphp_installdir = '/var/www/projects/simplesamlphp-1.10.0';
+  variable_set('simplesamlphp_auth_installdir', $simplesamlphp_installdir);
 }
 
 /**
