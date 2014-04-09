@@ -176,7 +176,8 @@ function simplesamlphp_auth_loginpage() {
 
     // If a ReturnTo has been set.
     if ($gotourl) {
-      drupal_goto(str_replace($base_url . '/', '', $gotourl));
+      $parsed_gotourl = drupal_parse_url($gotourl);
+      drupal_goto($parsed_gotourl['path'],$parsed_gotourl);
     }
     else {
       drupal_goto('user/' . $user->uid);
@@ -314,7 +315,7 @@ function simplesamlphp_auth_init() {
 
         // If user IDs or roles are specified, we let them in, but everyone else gets logged out.
         if (drupal_strlen($strAllwDefLogUsers) || $arrAllwDefLogRoles) {
-          
+
           // Convert the string into an array.
           // @todo Perform a test to make sure that only numbers, spaces, or commas are in the string.
           $arrAllwDefLogUsers = explode(',', $strAllwDefLogUsers);
@@ -338,9 +339,9 @@ function simplesamlphp_auth_init() {
               _simplesamlphp_auth_destroy_drupal_session();
             }
           }
-          
+
         } // Test for specified users.
-        
+
       } // End if $_simplesamlphp_auth_as->isAuthenticated().
     } // End test to see if we allow default logins.
   } // End if user->uid.
@@ -393,9 +394,9 @@ function simplesamlphp_auth_user_insert(&$edit, $account, $category = NULL) {
           ->condition('uid', $account->uid)
           ->execute();
       }
-      
+
       if (module_exists('rules')) {
-        rules_invoke_event('simplesamlphp_auth_rules_event_register', $account); 
+        rules_invoke_event('simplesamlphp_auth_rules_event_register', $account);
       }
 
       _simplesaml_auth_debug(t('Updating mail [%mailaddr]', array('%mailaddr' => $mail_address)));
@@ -457,7 +458,7 @@ function simplesamlphp_auth_settings() {
   $form['simplesamlphp_auth_grp_setup'] = array(
     '#type' => 'fieldset',
     '#title' => t('Basic Setup'),
-    '#collapsible' => FALSE, 
+    '#collapsible' => FALSE,
   );
   $form['simplesamlphp_auth_grp_setup']['simplesamlphp_auth_activate'] = array(
     '#type' => 'checkbox',
@@ -483,11 +484,11 @@ function simplesamlphp_auth_settings() {
     '#default_value' => variable_get('simplesamlphp_auth_forcehttps', TRUE),
     '#description' => t('Should be enabled on production sites.'),
   );
-  
+
   $form['simplesamlphp_auth_grp_user'] = array(
     '#type' => 'fieldset',
     '#title' => t('User Info and Syncing'),
-    '#collapsible' => FALSE, 
+    '#collapsible' => FALSE,
   );
   $form['simplesamlphp_auth_grp_user']['simplesamlphp_auth_user_name'] = array(
     '#type' => 'textfield',
