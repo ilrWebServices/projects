@@ -1,0 +1,7 @@
+#!/bin/bash
+
+drush sql-sync @projects.webupdates.prod @projects.webupdates.local --no-cache -y
+
+drush rsync @projects.webupdates.prod:%files/ @projects.webupdates.local:%files
+
+drush -l webupdates.projects.dev en drupal_streamline_dev -y
