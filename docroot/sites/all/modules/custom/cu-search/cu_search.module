@@ -80,8 +80,8 @@ function cu_search_block_view($delta = '') {
   if (!variable_get('cu_search_google_key')) {
     return $block;
   }
-
-  $block['content'] = '<div id="search-form">' . drupal_render(drupal_get_form('cu_search_form')) . '</div>';
+  $search_form = drupal_get_form('cu_search_form');
+  $block['content'] = '<div id="search-form">' . drupal_render($search_form) . '</div>';
 
   return $block;
 }
