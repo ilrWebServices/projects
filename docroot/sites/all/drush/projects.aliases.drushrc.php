@@ -30,18 +30,18 @@ $aliases['hoc.prod'] = array(
   ),
 );
 
-// Site projects, environment prod
-$aliases['webupdates.prod'] = array(
+// Site projects, environment test
+$aliases['hoc.test'] = array(
   'parent' => '@parent',
   'site' => 'projects',
-  'env' => 'prod',
-  'uri' => 'http://webupdates.ilr.cornell.edu/',
-  'root' => '/var/www/html/projects.prod/docroot',
+  'env' => 'test',
+  'uri' => 'http://hoc-stage.ilr.cornell.edu/',
+  'root' => '/var/www/html/projects.test/docroot',
   'remote-host' => 'srv-2136.devcloud.hosting.acquia.com',
   'remote-user' => 'projects',
   'path-aliases' => array (
     '%dump-dir' => '/mnt/files/projectsdev/import',
-    '%files' => '/var/www/html/projects.prod/docroot/sites/webupdates.ilr.cornell.edu/files',
+    '%files' => '/var/www/html/projects.test/docroot/sites/hoc-stage.ilr.cornell.edu/files',
   ),
 );
 
